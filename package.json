@@ -9,8 +9,9 @@
     "start": "node index.js",
     "server": "node index.js",
     "client": "(cd ./client && yarn start)",
-    "dev": "concurrently \"yarn run server\" \"yarn run client\"",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && cd client && yarn && yarn run build"
+    "dev": "concurrently \"yarn run server\" \"yarn run client\" \"yarn run webhook\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && cd client && yarn && yarn run build",
+    "webhook": "lt --port 5000"
   },
   "license": "MIT",
   "dependencies": {
@@ -18,6 +19,7 @@
     "concurrently": "^3.5.1",
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
+    "localtunnel": "^1.8.3",
     "mongoose": "^5.0.4",
     "nodemon": "^1.15.0",
     "passport": "^0.4.0",
