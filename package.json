@@ -11,7 +11,7 @@
     "client": "(cd ./client && yarn start)",
     "dev": "concurrently \"yarn run server\" \"yarn run client\" \"yarn run webhook\"",
     "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false && cd client && yarn && yarn run build",
-    "webhook": "lt --port 5000"
+    "webhook": "ngrok http 5000"
   },
   "license": "MIT",
   "dependencies": {
@@ -20,10 +20,12 @@
     "cookie-session": "^2.0.0-beta.3",
     "express": "^4.16.2",
     "localtunnel": "^1.8.3",
+    "lodash": "^4.17.5",
     "mongoose": "^5.0.4",
     "nodemon": "^1.15.0",
     "passport": "^0.4.0",
     "passport-google-oauth20": "^1.0.0",
+    "path-parser": "^3.0.1",
     "sendgrid": "^5.2.3",
     "stripe": "^5.4.0"
   }
